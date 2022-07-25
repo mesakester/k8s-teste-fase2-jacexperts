@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-app-py
+  namespace: aluno-mesaque
+spec:
+  rules:
+  - host: app-py-mesaque.aula.jac.bsb.br
+    http:
+      paths:
+      - backend:
+          service:
+            name: service-app-py
+            port:
+              number: 5000
+        pathType: ImplementationSpecific

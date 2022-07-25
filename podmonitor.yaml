@@ -1,0 +1,14 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PodMonitor
+metadata:
+  labels:
+    app: app-py
+  name: app-py-podmonitor
+  namespace: aluno-mesaque
+spec:
+  podMetricsEndpoints:
+  - port: 5000
+    interval: 10s
+  selector:
+    matchLabels:
+      app: app-py
